@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Dev/itqa/new/selenium">
         <classes>
-            <class name="Pages.TestOrangeHrm">
+            <class name="Pages.OrangeHrmPage">
                 <methods>
                     <include name="Login"/>
                 </methods>

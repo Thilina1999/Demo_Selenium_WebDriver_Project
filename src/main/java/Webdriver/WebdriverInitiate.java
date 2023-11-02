@@ -3,19 +3,20 @@ package Webdriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class WebdriverInitiate {
-    WebDriver driver;
 
-    public WebDriver webDriver(String url) {
-        try {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-            driver.get(url);
-            return driver;
-        } catch (Exception e) {
-            System.out.println("Error" + e);
-            return driver;
-        }
+    int maxWaitTime = 10;
+
+    public WebDriver webDriver() {
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
+    }
+
+    public WebDriverWait webDriverWait(WebDriver driver) {
+        return new WebDriverWait(driver, Duration.ofSeconds(maxWaitTime));
     }
 }
