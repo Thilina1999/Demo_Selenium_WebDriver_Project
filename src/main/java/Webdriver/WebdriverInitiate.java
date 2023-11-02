@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class WebdriverInitiate {
 
-    int maxWaitTime = 10;
+    int maxWaitTime = 20;
 
     public WebDriver webDriverChrome() {
         WebDriverManager.chromedriver().setup();
