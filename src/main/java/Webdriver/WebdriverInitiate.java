@@ -11,7 +11,7 @@ public class WebdriverInitiate {
 
     int maxWaitTime = 10;
 
-    public WebDriver webDriver() {
+    public WebDriver webDriverChrome() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
