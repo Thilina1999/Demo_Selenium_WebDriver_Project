@@ -10,6 +10,7 @@ public class AcademyBugsPage {
     WebDriverWait wait;
 
     By addCartYellowShoes = By.xpath("//*[@id=\"ec_add_to_cart_5\"]");
+    By addDarkGreyJeans = By.xpath("//*[@id=\"ec_add_to_cart_4\"]");
     By clickViewCartButton = By.xpath("//*[@id=\"ec_product_page\"]/div[2]/a");
     By increaseCartYellowShoes = By.xpath("//input[contains(@id, 'ec_quantity_')]\n");
     By updateButtonYellowShoesButton = By.xpath("//div[contains(@id, 'ec_cartitem_update_') and contains(@onclick, 'ec_cartitem_update') and text()='UPDATE']");
@@ -23,12 +24,16 @@ public class AcademyBugsPage {
     public void setAddCartYellowShoes() {
         wait.until(ExpectedConditions.presenceOfElementLocated(addCartYellowShoes)).click();
     }
+    public void setAddDarkGreyJeans(){
+        wait.until(ExpectedConditions.elementToBeClickable(addDarkGreyJeans)).click();
+    }
 
     public void setClickViewCartButton() {
         wait.until(ExpectedConditions.elementToBeClickable(clickViewCartButton)).click();
     }
 
     public void setIncreaseCartYellowShoes(String number) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(increaseCartYellowShoes)).clear();
         wait.until(ExpectedConditions.presenceOfElementLocated(increaseCartYellowShoes)).sendKeys(number);
     }
 

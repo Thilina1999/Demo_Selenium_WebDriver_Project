@@ -58,6 +58,14 @@ public class TestSelenium extends RecordWatcher {
 
         academyBugsPage.setAddCartYellowShoes();
         academyBugsPage.setClickViewCartButton();
+    }
+    @Test
+    public void AcademyBugsTest2() {
+        setUp(basePage.getAcademyBugUrl());
+        AcademyBugsPage academyBugsPage = new AcademyBugsPage(driver, wait);
+
+        academyBugsPage.setAddDarkGreyJeans();
+        academyBugsPage.setClickViewCartButton();
         academyBugsPage.setIncreaseCartYellowShoes("5");
         academyBugsPage.setUpdateButtonYellowShoesButton();
     }
