@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class WebdriverInitiate {
 
-    int maxWaitTime = 20;
+    int maxWaitTime;
 
     public WebdriverInitiate(int maxWaitTime){
         this.maxWaitTime = maxWaitTime;

@@ -1,5 +1,6 @@
 package Pages;
 
+import Data.ProductPagePathData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,11 +10,11 @@ public class AcademyBugsProductPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    By addCartYellowShoes = By.xpath("//*[@id=\"ec_add_to_cart_5\"]");
-    By addDarkGreyJeans = By.xpath("//*[@id=\"ec_add_to_cart_4\"]");
-    By clickViewCartButton = By.xpath("//*[@id=\"ec_product_page\"]/div[2]/a");
-    By clickBlueHoodie = By.xpath("//*[@id=\"ec_product_image_effect_3381370\"]/a");
-    By acceptCookies = By.xpath("//*[@id=\"cc-window\"]/div/a[2]");
+    By addCartYellowShoes = By.xpath(ProductPagePathData.addCartYellowShoes);
+    By addDarkGreyJeans = By.xpath(ProductPagePathData.addDarkGreyJeans);
+    By clickViewCartButton = By.xpath(ProductPagePathData.clickViewCartButton);
+    By clickBlueHoodie = By.xpath(ProductPagePathData.clickBlueHoodie);
+    By acceptCookies = By.xpath(ProductPagePathData.acceptCookies);
 
     public AcademyBugsProductPage(WebDriver driver, WebDriverWait webDriverWait) {
         this.driver = driver;

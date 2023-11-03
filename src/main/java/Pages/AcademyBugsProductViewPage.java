@@ -1,5 +1,6 @@
 package Pages;
 
+import Data.ProductViewPathData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,11 +10,11 @@ public class AcademyBugsProductViewPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    By postComment = By.xpath("//*[@id=\"comment\"]");
-    By commentAuthor = By.xpath("//*[@id=\"author\"]");
-    By commentEmail = By.xpath("//*[@id=\"email\"]");
-    By commentWebsite = By.xpath("//*[@id=\"url\"]");
-    By postCommentButton = By.xpath("//*[@id=\"academy-comment-submit\"]");
+    By postComment = By.xpath(ProductViewPathData.postComment);
+    By commentAuthor = By.xpath(ProductViewPathData.commentAuthor);
+    By commentEmail = By.xpath(ProductViewPathData.commentEmail);
+    By commentWebsite = By.xpath(ProductViewPathData.commentWebsite);
+    By postCommentButton = By.xpath(ProductViewPathData.postCommentButton);
 
 
     public AcademyBugsProductViewPage(WebDriver driver, WebDriverWait webDriverWait) {

@@ -2,6 +2,7 @@ package Test;
 
 import Constants.Constants;
 import Constants.PageUrl;
+import Data.AcademyBugsTestData;
 import Pages.AcademyBugsCartPage;
 import Pages.AcademyBugsProductViewPage;
 import Pages.AcademyBugsProductPage;
@@ -52,7 +53,7 @@ public class TestAcademyBugs extends RecordWatcher {
         academyBugsProductPage.setAcceptCookies();
         academyBugsProductPage.setAddDarkGreyJeans();
         academyBugsProductPage.setClickViewCartButton();
-        academyBugsCartPage.setIncreaseCartBox("5");
+        academyBugsCartPage.setIncreaseCartBox(AcademyBugsTestData.cartBoxValue);
         academyBugsCartPage.setUpdateButton();
     }
     @Test
@@ -61,10 +62,10 @@ public class TestAcademyBugs extends RecordWatcher {
 
         academyBugsProductPage.setAcceptCookies();
         academyBugsProductPage.setClickBlueHoodie();
-        academyBugsProductViewPage.setPostComment("Test Product Comment");
-        academyBugsProductViewPage.setCommentAuthor("194041P");
-        academyBugsProductViewPage.setCommentEmail("user@gmail.com");
-        academyBugsProductViewPage.setCommentWebsite("www.testWeb.com");
+        academyBugsProductViewPage.setPostComment(AcademyBugsTestData.comment);
+        academyBugsProductViewPage.setCommentAuthor(AcademyBugsTestData.author);
+        academyBugsProductViewPage.setCommentEmail(AcademyBugsTestData.email);
+        academyBugsProductViewPage.setCommentWebsite(AcademyBugsTestData.website);
         academyBugsProductViewPage.setPostCommentButton();
     }
 
