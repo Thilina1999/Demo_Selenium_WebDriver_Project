@@ -1,14 +1,9 @@
-package Pages;
+package Constants;
 
-public class BasePage {
+public class PageUrl {
 
-    private int ThreadWaitTime = 5000;
     private String OrangeHrmUrl = "https://opensource-demo.orangehrmlive.com";
     private String AcademyBugUrl = "https://academybugs.com/find-bugs";
-
-    public int getThreadWaitTime() {
-        return ThreadWaitTime;
-    }
 
     public String getOrangeHrmUrl() {
         return OrangeHrmUrl;

@@ -5,18 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AcademyBugsPage {
+public class AcademyBugsProductPage {
     WebDriver driver;
     WebDriverWait wait;
 
     By addCartYellowShoes = By.xpath("//*[@id=\"ec_add_to_cart_5\"]");
     By addDarkGreyJeans = By.xpath("//*[@id=\"ec_add_to_cart_4\"]");
     By clickViewCartButton = By.xpath("//*[@id=\"ec_product_page\"]/div[2]/a");
-    By increaseCartYellowShoes = By.xpath("//input[contains(@id, 'ec_quantity_')]\n");
-    By updateButtonYellowShoesButton = By.xpath("//div[contains(@id, 'ec_cartitem_update_') and contains(@onclick, 'ec_cartitem_update') and text()='UPDATE']");
+    By clickBlueHoodie = By.xpath("//*[@id=\"ec_product_image_effect_3381370\"]/a");
+    By acceptCookies = By.xpath("//*[@id=\"cc-window\"]/div/a[2]");
 
-
-    public AcademyBugsPage(WebDriver driver, WebDriverWait webDriverWait){
+    public AcademyBugsProductPage(WebDriver driver, WebDriverWait webDriverWait) {
         this.driver = driver;
         this.wait = webDriverWait;
     }
@@ -24,7 +23,8 @@ public class AcademyBugsPage {
     public void setAddCartYellowShoes() {
         wait.until(ExpectedConditions.presenceOfElementLocated(addCartYellowShoes)).click();
     }
-    public void setAddDarkGreyJeans(){
+
+    public void setAddDarkGreyJeans() {
         wait.until(ExpectedConditions.elementToBeClickable(addDarkGreyJeans)).click();
     }
 
@@ -32,13 +32,11 @@ public class AcademyBugsPage {
         wait.until(ExpectedConditions.elementToBeClickable(clickViewCartButton)).click();
     }
 
-    public void setIncreaseCartYellowShoes(String number) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(increaseCartYellowShoes)).clear();
-        wait.until(ExpectedConditions.presenceOfElementLocated(increaseCartYellowShoes)).sendKeys(number);
+    public void setClickBlueHoodie() {
+        wait.until(ExpectedConditions.elementToBeClickable(clickBlueHoodie)).click();
     }
 
-    public void setUpdateButtonYellowShoesButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(updateButtonYellowShoesButton)).click();
+    public void setAcceptCookies() {
+        wait.until(ExpectedConditions.elementToBeClickable(acceptCookies)).click();
     }
-
 }
