@@ -6,4 +6,6 @@ public class ProductPagePathData {
     static public String clickViewCartButton = "//*[@id=\"ec_product_page\"]/div[2]/a";
     static public String clickBlueHoodie = "//*[@id=\"ec_product_image_effect_3381370\"]/a";
     static public String acceptCookies = "//*[@id=\"cc-window\"]/div/a[2]";
+    static public String pageNumberItem_10 = "//*[@id=\"ec_product_page\"]/div[1]/span[1]/a[1]";
+    static public String pageNumberItem_25 = "//*[@id=\"ec_product_page\"]/div[1]/span[1]/a[2]";
 }

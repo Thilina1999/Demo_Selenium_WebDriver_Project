@@ -9,6 +9,7 @@ import Pages.AcademyBugsProductPage;
 import RecordWatcher.RecordWatcher;
 import Webdriver.WebdriverInitiate;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +40,15 @@ public class TestAcademyBugs extends RecordWatcher {
     }
 
     @Test
+    public void TEST_UI_PRODUCT_PO_001() {
+        setUp(pageUrl.getAcademyBugUrl());
+
+        String expectedColor = academyBugsProductPage.getPageNumberItem_25Color();
+        academyBugsProductPage.setPageNumberItem_10();
+        Assert.assertEquals(expectedColor, academyBugsProductPage.getPageNumberItem_10Color());
+    }
+
+    @Test
     public void TEST_UI_CART_PO_002() {
         setUp(pageUrl.getAcademyBugUrl());
 
@@ -46,8 +56,9 @@ public class TestAcademyBugs extends RecordWatcher {
         academyBugsProductPage.setAddCartYellowShoes();
         academyBugsProductPage.setClickViewCartButton();
     }
+
     @Test
-    public void TEST_UI_CART_PO_003() {
+    public void TEST_UI_CART_PO_003() throws Exception {
         setUp(pageUrl.getAcademyBugUrl());
 
         academyBugsProductPage.setAcceptCookies();
@@ -55,7 +66,10 @@ public class TestAcademyBugs extends RecordWatcher {
         academyBugsProductPage.setClickViewCartButton();
         academyBugsCartPage.setIncreaseCartBox(AcademyBugsTestData.cartBoxValue);
         academyBugsCartPage.setUpdateButton();
+        Thread.sleep(constants.getWaitTime());
+        Assert.assertEquals(AcademyBugsTestData.cartBoxValue, academyBugsCartPage.getIncreaseCartBoxValue());
     }
+
     @Test
     public void TEST_UI_VIEW_PO_004() {
         setUp(pageUrl.getAcademyBugUrl());
@@ -67,9 +81,5 @@ public class TestAcademyBugs extends RecordWatcher {
         academyBugsProductViewPage.setCommentEmail(AcademyBugsTestData.email);
         academyBugsProductViewPage.setCommentWebsite(AcademyBugsTestData.website);
         academyBugsProductViewPage.setPostCommentButton();
-    }
-
-    public void AcademyBugsTest4() {
-
     }
 }
