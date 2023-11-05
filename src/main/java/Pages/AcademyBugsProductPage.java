@@ -20,6 +20,7 @@ public class AcademyBugsProductPage {
     By acceptCookies = By.xpath(ProductPagePathData.acceptCookies);
     By pageNumberItem_10 = By.xpath(ProductPagePathData.pageNumberItem_10);
     By pageNumberItem_25 = By.xpath(ProductPagePathData.pageNumberItem_25);
+    By yellowShoesAttribute = By.xpath(ProductPagePathData.yellowShoesAttribute);
 
     public AcademyBugsProductPage(WebDriver driver, WebDriverWait webDriverWait) {
         this.driver = driver;
@@ -58,5 +59,10 @@ public class AcademyBugsProductPage {
     public String getPageNumberItem_25Color() {
         WebElement element = driver.findElement(pageNumberItem_25);
         return element.getCssValue("background-color");
+    }
+
+    public String getYellowShoesAttribute() {
+        WebElement element = driver.findElement(yellowShoesAttribute);
+        return element.getText();
     }
 }

@@ -12,6 +12,7 @@ public class AcademyBugsCartPage {
     WebDriverWait wait;
     By increaseCartBox = By.xpath(CartPagePathData.increaseCartBox);
     By updateButton = By.xpath(CartPagePathData.updateButton);
+    By cartProductName = By.xpath(CartPagePathData.cartProductName);
 
     public AcademyBugsCartPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -30,5 +31,10 @@ public class AcademyBugsCartPage {
     public String getIncreaseCartBoxValue() {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(increaseCartBox));
         return element.getAttribute("value");
+    }
+
+    public String getCartProductName() {
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(cartProductName));
+        return element.getText();
     }
 }

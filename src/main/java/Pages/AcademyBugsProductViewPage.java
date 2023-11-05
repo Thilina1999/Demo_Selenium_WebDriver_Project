@@ -15,6 +15,7 @@ public class AcademyBugsProductViewPage {
     By commentEmail = By.xpath(ProductViewPathData.commentEmail);
     By commentWebsite = By.xpath(ProductViewPathData.commentWebsite);
     By postCommentButton = By.xpath(ProductViewPathData.postCommentButton);
+    By allItemButton = By.xpath(ProductViewPathData.allItemButton);
 
 
     public AcademyBugsProductViewPage(WebDriver driver, WebDriverWait webDriverWait) {
@@ -40,5 +41,9 @@ public class AcademyBugsProductViewPage {
 
     public void setPostCommentButton() {
         wait.until(ExpectedConditions.presenceOfElementLocated(postCommentButton)).click();
+    }
+
+    public void setAllItemButton() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(allItemButton)).click();
     }
 }
