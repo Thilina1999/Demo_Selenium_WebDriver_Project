@@ -7,4 +7,6 @@ public class ProductViewPathData {
     static public String commentWebsite = "//*[@id=\"url\"]";
     static public String postCommentButton = "//*[@id=\"academy-comment-submit\"]";
     static public String allItemButton = "//*[@id=\"ec_breadcrumbs_type1\"]/a[3]";
+    static public String currencyChangeButton = "//*[@id=\"ec_currency_conversion\"]";
+    static public String dbpCurrencyType = "//*[@id=\"ec_currency_conversion\"]/option[3]";
 }

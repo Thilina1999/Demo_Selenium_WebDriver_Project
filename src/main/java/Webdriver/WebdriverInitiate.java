@@ -11,7 +11,7 @@ public class WebdriverInitiate {
 
     int maxWaitTime;
 
-    public WebdriverInitiate(int maxWaitTime){
+    public WebdriverInitiate(int maxWaitTime) {
         this.maxWaitTime = maxWaitTime;
     }
 

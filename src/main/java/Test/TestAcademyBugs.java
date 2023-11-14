@@ -107,4 +107,42 @@ public class TestAcademyBugs extends RecordWatcher {
         }
         Assert.assertEquals(pageUrl.getAcademyBugItemUrl(), basePage.getPageUrl());
     }
+
+    @Test
+    public void TEST_UI_VIEW_PO_005() {
+        String currencyType = null;
+        try {
+            setUp(pageUrl.getAcademyBugUrl());
+
+            academyBugsProductPage.setAcceptCookies();
+            academyBugsProductPage.setClickBlueHoodie();
+            academyBugsProductViewPage.setCurrencyChangeButton();
+            academyBugsProductViewPage.selectCurrencyTypeGBP();
+            currencyType = academyBugsProductViewPage.getOptionCurrencyType();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        Assert.assertEquals(currencyType, academyBugsProductViewPage.getSelectedCurrencyType());
+        Assert.assertEquals(pageUrl.getAcademyBugItemUrl(), basePage.getPageUrl());
+    }
+
+    @Test
+    public void TEST_UI_CART_PO_006() {
+        String currencyType = null;
+        try {
+            setUp(pageUrl.getAcademyBugUrl());
+
+            academyBugsProductPage.setAcceptCookies();
+            academyBugsProductPage.setAcceptCookies();
+            academyBugsProductPage.setAddCartYellowShoes();
+            academyBugsProductPage.setClickViewCartButton();
+            academyBugsProductViewPage.setCurrencyChangeButton();
+            academyBugsProductViewPage.selectCurrencyTypeGBP();
+            currencyType = academyBugsProductViewPage.getOptionCurrencyType();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        Assert.assertEquals(currencyType, academyBugsProductViewPage.getSelectedCurrencyType());
+        Assert.assertEquals(pageUrl.getAcademyBugItemUrl(), basePage.getPageUrl());
+    }
 }

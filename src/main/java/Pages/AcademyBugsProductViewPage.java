@@ -3,6 +3,7 @@ package Pages;
 import Data.ProductViewPathData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,6 +17,8 @@ public class AcademyBugsProductViewPage {
     By commentWebsite = By.xpath(ProductViewPathData.commentWebsite);
     By postCommentButton = By.xpath(ProductViewPathData.postCommentButton);
     By allItemButton = By.xpath(ProductViewPathData.allItemButton);
+    By currencyChangeButton = By.xpath(ProductViewPathData.currencyChangeButton);
+    By dbpCurrencyType = By.xpath(ProductViewPathData.dbpCurrencyType);
 
 
     public AcademyBugsProductViewPage(WebDriver driver, WebDriverWait webDriverWait) {
@@ -46,4 +49,23 @@ public class AcademyBugsProductViewPage {
     public void setAllItemButton() {
         wait.until(ExpectedConditions.presenceOfElementLocated(allItemButton)).click();
     }
+
+    public String getSelectedCurrencyType() {
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(currencyChangeButton));
+        return element.getAttribute("value");
+    }
+
+    public String getOptionCurrencyType() {
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(dbpCurrencyType));
+        return element.getAttribute("value");
+    }
+
+    public void setCurrencyChangeButton() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(currencyChangeButton)).click();
+    }
+
+    public void selectCurrencyTypeGBP() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(dbpCurrencyType)).click();
+    }
+
 }
